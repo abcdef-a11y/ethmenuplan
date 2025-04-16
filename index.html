@@ -11,16 +11,16 @@
         setTimeout(() => {
             const currentDate = new Date().toISOString().split('T')[0];
             const urlParams = new URLSearchParams(window.location.search);
-            const location = urlParams.get('location');
+            const location = urlParams.get('location') || 9;
             switch (location) {
                 case 'poly':
-                    location = 9;
+                    id = 9;
                     break;
                 case 'archimedes':
-                    location = 8;
+                    id = 8;
                     break;
             }
-            document.location = `https://ethz.ch/de/campus/erleben/gastronomie-und-einkaufen/gastronomie/menueplaene/offerDay.html?date=${currentDate}&id=${location}`;
+            document.location = `https://ethz.ch/de/campus/erleben/gastronomie-und-einkaufen/gastronomie/menueplaene/offerDay.html?date=${currentDate}&id=${id}`;
         }, 100);
     </script>
 </body>
