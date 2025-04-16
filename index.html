@@ -10,7 +10,17 @@
     <script>
         setTimeout(() => {
             const currentDate = new Date().toISOString().split('T')[0];
-            document.location = `https://ethz.ch/de/campus/erleben/gastronomie-und-einkaufen/gastronomie/menueplaene/offerDay.html?date=${currentDate}&id=9`;
+            const urlParams = new URLSearchParams(window.location.search);
+            const location = urlParams.get('location');
+            switch (location) {
+                case 'poly':
+                    location = 9;
+                    break;
+                case 'archimedes':
+                    location = 8;
+                    break;
+            }
+            document.location = `https://ethz.ch/de/campus/erleben/gastronomie-und-einkaufen/gastronomie/menueplaene/offerDay.html?date=${currentDate}&id=${location}`;
         }, 100);
     </script>
 </body>
