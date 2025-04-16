@@ -11,7 +11,8 @@
         setTimeout(() => {
             const currentDate = new Date().toISOString().split('T')[0];
             const urlParams = new URLSearchParams(window.location.search);
-            const location = urlParams.get('location') || 9;
+            const location = urlParams.get('location') || 'poly';
+            let id = 9; // Default to poly
             switch (location) {
                 case 'poly':
                     id = 9;
